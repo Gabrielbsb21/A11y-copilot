@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>A11y Copilot Fixture — Botões de Ícone Ambíguos</title>
+</head>
+<body>
+  <main>
+    <h1>Vitrine e Comunidade</h1>
+
+    <!-- Caso 1: Ícone de coração em contexto de E-commerce (Intenção: Adicionar aos favoritos) -->
+    <section aria-labelledby=" catalog-heading">
+      <h2 id="catalog-heading">Produtos em Destaque</h2>
+      <article class="product-card" data-testid="product-card">
+        <h3>Fone Bluetooth Cancelamento de Ruído</h3>
+        <p class="price">R$ 599,00</p>
+        <p class="hint">Salve este item na sua lista de desejos para acompanhar descontos.</p>
+        <div class="actions">
+          <button id="buy-btn" type="button">Comprar agora</button>
+          <button id="fav-btn" type="button" class="icon-only">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+          </button>
+        </div>
+      </article>
+    </section>
+
+    <!-- Caso 2: Mesmo ícone de coração em contexto de Rede Social (Intenção: Curtir publicação) -->
+    <section aria-labelledby="feed-heading">
+      <h2 id="feed-heading">Publicações da Comunidade</h2>
+      <article class="social-post" data-testid="social-post">
+        <h3>@dev_ana</h3>
+        <p>Acabei de publicar nossa primeira biblioteca de acessibilidade em Rust!</p>
+        <span class="likes-counter">128 curtidas</span>
+        <div class="post-actions">
+          <button id="like-btn" type="button" class="icon-only">
+            <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+              <path d="M12 21.35l-1.45-1.32C5.4 15.36 2 12.28 2 8.5 2 5.42 4.42 3 7.5 3c1.74 0 3.41.81 4.5 2.09C13.09 3.81 14.76 3 16.5 3 19.58 3 22 5.42 22 8.5c0 3.78-3.4 6.86-8.55 11.54L12 21.35z" />
+            </svg>
+          </button>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

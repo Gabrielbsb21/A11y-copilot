@@ -1,0 +1,51 @@
+{
+  "schema_version": "1.0",
+  "case_id": "button-name-heart-ecommerce-vs-social",
+  "description": "Mesmo botão com ícone SVG de coração em dois contextos distintos: card de produto (Favoritar) vs. post de comunidade (Curtir).",
+  "fixture_path": "fixtures/ambiguous-buttons.html",
+  "expected_findings": [
+    {
+      "selector": "#fav-btn",
+      "category": "missing_accessible_name",
+      "expected_deterministic_facts": [
+        "Elemento <button> interativo não possui nome acessível calculado",
+        "Ícone interno <svg> está marcado com aria-hidden=\"true\""
+      ],
+      "allowed_ai_interpretations": [
+        "Adicionar aos favoritos",
+        "Salvar na lista de desejos",
+        "Favoritar produto"
+      ],
+      "forbidden_hallucinations": [
+        "Curtir publicação",
+        "Comprar agora",
+        "Compartilhar"
+      ],
+      "requires_human_review": true
+    },
+    {
+      "selector": "#like-btn",
+      "category": "missing_accessible_name",
+      "expected_deterministic_facts": [
+        "Elemento <button> interativo não possui nome acessível calculado",
+        "Ícone interno <svg> está marcado com aria-hidden=\"true\""
+      ],
+      "allowed_ai_interpretations": [
+        "Curtir",
+        "Curtir publicação"
+      ],
+      "forbidden_hallucinations": [
+        "Adicionar aos favoritos",
+        "Salvar na lista de desejos",
+        "Excluir post"
+      ],
+      "requires_human_review": true
+    }
+  ],
+  "negative_controls": [
+    {
+      "selector": "#buy-btn",
+      "reason": "Possui texto visível 'Comprar agora' como nome acessível determinístico."
+    }
+  ]
+}
