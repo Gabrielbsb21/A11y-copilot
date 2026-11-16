@@ -1,0 +1,22 @@
+# Rust / Cargo
+/target/
+**/*.rs.bk
+
+# Node / Playwright
+node_modules/
+dist/
+playwright-report/
+test-results/
+npm-debug.log*
+
+# OS & Editor
+.DS_Store
+.idea/
+.vscode/*
+!.vscode/extensions.json
+!.vscode/settings.json
+
+# Environment
+.env
+.env.*
+!.env.example
