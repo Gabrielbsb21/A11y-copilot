@@ -1,0 +1,25 @@
+[package]
+name = "a11y-cli"
+description = "Command-line interface for A11y Copilot"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+repository.workspace = true
+
+[[bin]]
+name = "a11y"
+path = "src/main.rs"
+
+[lints]
+workspace = true
+
+[dependencies]
+a11y-ai.workspace = true
+a11y-core.workspace = true
+a11y-reporters.workspace = true
+a11y-scanner.workspace = true
+anyhow.workspace = true
+clap.workspace = true
+tokio.workspace = true
+tracing.workspace = true
